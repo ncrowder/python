@@ -43,6 +43,47 @@
 </li>
 </ul>
 <p>Confidence intervals show the range of slopes that are compatible with the data, giving much more information than a p-value alone.</p>
+<h1 id="addendum-why-some-variables-are-treated-as-having-a-slope-of-zero-in-model-selection">Addendum: Why Some Variables Are Treated as Having a Slope of Zero in Model Selection</h1>
+<p>In multiple regression, the meaning of a p-value (evidence against the hypothesis that a particular slope is zero) is different from the decision rule used in some model selection methods.</p>
+<p>A p-value itself does not require you to set a slope to zero.<br>
+It simply tells you whether your data provide strong evidence that the slope is not zero.</p>
+<p>However, in certain model selection procedures, especially in traditional stepwise regression, a variable may be dropped from the model if its p-value exceeds a chosen threshold, usually 0.05. When this happens, the variable is removed from the equation entirely, which means that for the final chosen model, its slope is effectively treated as zero.</p>
+<p>This is a modeling choice, not a statistical inference.</p>
+<h3 id="how-this-works-in-practice">How this works in practice</h3>
+<p>Suppose a multiple regression model initially includes five predictors. After fitting the full model:</p>
+<ul>
+<li>
+<p>Predictor A has p = 0.002</p>
+</li>
+<li>
+<p>Predictor B has p = 0.041</p>
+</li>
+<li>
+<p>Predictor C has p = 0.131</p>
+</li>
+<li>
+<p>Predictor D has p = 0.667</p>
+</li>
+<li>
+<p>Predictor E has p = 0.094</p>
+</li>
+</ul>
+<p>In stepwise or backward elimination approaches, predictors C, D, and E would be candidates for removal because their p-values exceed the threshold of 0.05. If those variables are removed, the final model simply does not contain them.</p>
+<p>Removing a predictor means the model equation no longer has a term for that variable, which is equivalent to setting its slope coefficient to zero in the final model.  This is not because the p-value “proved” the slope is zero.</p>
+<p>Note, that each time a variable predictor is removed we must re-run the regression again using only the remaining variables since our initial estimates for the slopes were based on all the included variables.</p>
+<h3 id="important-distinction">Important distinction</h3>
+<ul>
+<li>
+<p>The hypothesis test evaluates whether the evidence supports a non-zero slope.</p>
+</li>
+<li>
+<p>The model selection rule is a decision strategy for choosing which predictors to include.</p>
+</li>
+<li>
+<p>These two things are conceptually different.</p>
+</li>
+</ul>
+<p>A non-significant p-value means “we cannot conclude the slope differs from zero,” but it does not mean the slope equals zero.</p>
 <blockquote>
 <p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 </blockquote>
