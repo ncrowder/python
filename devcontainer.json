@@ -1,24 +1,25 @@
 {
-        "name": "Python Data Science",
-    "image": "mcr.microsoft.com/devcontainers/python:3.11",
-    "features": {
-        "ghcr.io/devcontainers/features/github-cli:1": {}
-    },
-    "postCreateCommand": "pip install --no-cache-dir pandas numpy matplotlib seaborn scikit-learn jupyter ipykernel && python -m ipykernel install --user --name python3 --display-name 'Python 3'",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-toolsai.jupyter",
-                "ms-python.python",
-                "ms-python.vscode-pylance"
-            ],
-            "settings": {
-                "jupyter.kernels.trusted": ["python3"],
-                "python.linting.enabled": false,
-                "[python]": {
-                    "defaultInterpreterPath": "${default}"
-                }
-            }
-        }
+  "name": "Python Data Science",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "postCreateCommand": "pip install --no-cache-dir pandas numpy matplotlib seaborn scikit-learn jupyter ipykernel",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-toolsai.jupyter",
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ],
+      "settings": {
+        "python.linting.enabled": false
+        // no python.defaultInterpreterPath
+        // no jupyter.* settings
+      }
     }
+  }
 }
