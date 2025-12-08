@@ -6,7 +6,7 @@
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
 
-  "postCreateCommand": "pip install --no-cache-dir pandas numpy matplotlib seaborn scikit-learn jupyter ipykernel",
+  "postCreateCommand": "pip install --no-cache-dir pandas numpy matplotlib seaborn scikit-learn jupyter ipykernel && python -m ipykernel install --name codespace-py --display-name 'Python (Codespace)' --sys-prefix"
 
   "customizations": {
     "vscode": {
