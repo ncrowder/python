@@ -1,4 +1,17 @@
 {
-    "name": "Default Codespace",
-    "image": "mcr.microsoft.com/devcontainers/universal:2"
+        "name": "Python Data Science",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "postCreateCommand": "pip install --no-cache-dir pandas numpy matplotlib seaborn scikit-learn jupyter ipykernel",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-toolsai.jupyter",
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ]
+        }
+    }
 }
