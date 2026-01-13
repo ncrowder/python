@@ -20,10 +20,10 @@
 <p>Extend the function in part 2 so that the function also plots followers vs time.</p>
 </li>
 <li>
-<p>Suppose a mobile app has decided it is instituting a new ad campaign to draw more users. Assume that on a weekly basis the app gains 15% new users relative to the previous week’s total active users while 12% of existing users churn.  Each week 25% of previously inactive users become active again, but at most 500 previously inactive users can be reactivated in any given week.  What is the minimum number of users (rounded to the nearest multiple of 500) that the app must start with in order to hit 20,000 weekly active users in 20 weeks? Try using trial and error, but then try solving it programmatically and to the exact whole number in the general case by writing a function with this signature:</p>
+<p>Suppose a mobile app has decided it is instituting a new ad campaign to draw more users. Assume that on a weekly basis the app gains 15% new users relative to the previous week’s total active users while 750 existing users churn.  Each week 25% of previously inactive users become active again, but at most 500 previously inactive users can be reactivated in any given week.  What is the minimum number of users (rounded to the nearest multiple of 500) that the app must start with in order to hit 20,000 weekly active users in 20 weeks? Try using trial and error, but then try solving it programmatically and to the exact whole number in the general case by writing a function with this signature:</p>
 </li>
 </ol>
-<pre><code>find_init_users(per_new, per_churn, per_reactivate, act_cap, target_num, weeks)   
+<pre><code>find_init_users(per_new, churn, per_reactivate, act_cap, target_num, weeks)   
 </code></pre>
 <p>The function will either return the minimum starting number of users or return “Not possible under given assumptions.”</p>
 <ol start="5">
